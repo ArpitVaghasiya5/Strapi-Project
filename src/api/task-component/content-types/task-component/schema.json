@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "task_components",
+  "info": {
+    "singularName": "task-component",
+    "pluralName": "task-components",
+    "displayName": "TaskComponent",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "taskcomponent": {
+      "type": "component",
+      "repeatable": true,
+      "component": "custom-components.task-component"
+    }
+  }
+}

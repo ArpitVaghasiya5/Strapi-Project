@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_page_image_d_components",
+  "info": {
+    "displayName": "ImageDComponent"
+  },
+  "options": {},
+  "attributes": {
+    "mainImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}

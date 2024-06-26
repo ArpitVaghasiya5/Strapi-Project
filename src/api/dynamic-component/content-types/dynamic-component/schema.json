@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dynamic_components",
+  "info": {
+    "singularName": "dynamic-component",
+    "pluralName": "dynamic-components",
+    "displayName": "DynamicComponents",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "YoutubeComponent": {
+      "displayName": "YoutubeComponent",
+      "type": "component",
+      "repeatable": false,
+      "component": "page.youtube-component"
+    },
+    "ImageGComponent": {
+      "displayName": "ImageGComponent",
+      "type": "component",
+      "repeatable": false,
+      "component": "page.image-g-component"
+    },
+    "section": {
+      "type": "dynamiczone",
+      "components": [
+        "page.image-g-component",
+        "page.youtube-component",
+        "page.image-d-component"
+      ]
+    },
+    "ImageDComponent": {
+      "displayName": "ImageDComponent",
+      "type": "component",
+      "repeatable": false,
+      "component": "page.image-d-component"
+    }
+  }
+}

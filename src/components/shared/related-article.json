@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_related_articles",
+  "info": {
+    "displayName": "relatedArticle",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "intro": {
+      "type": "string"
+    },
+    "article": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::article.article"
+    }
+  }
+}

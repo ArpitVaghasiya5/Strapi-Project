@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_page_youtube_components",
+  "info": {
+    "displayName": "YoutubeComponent",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "youtubeUrl": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    }
+  }
+}

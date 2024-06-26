@@ -1,0 +1,48 @@
+{
+  "collectionName": "components_custom_components_task_components",
+  "info": {
+    "displayName": "TaskComponent",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "titleTextColor": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "buttonLabel": {
+      "type": "string"
+    },
+    "buttonColor": {
+      "type": "string"
+    },
+    "buttonRedirectUrl": {
+      "type": "string"
+    },
+    "leftImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "rightImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
