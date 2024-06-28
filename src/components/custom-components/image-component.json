@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_custom_components_image_components",
+  "info": {
+    "displayName": "ImageComponent",
+    "icon": "arrowDown"
+  },
+  "options": {},
+  "attributes": {
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "leftImage",
+        "rightImage"
+      ]
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -1,5 +1,17 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface CustomComponentsImageComponent extends Schema.Component {
+  collectionName: 'components_custom_components_image_components';
+  info: {
+    displayName: 'ImageComponent';
+    icon: 'arrowDown';
+  };
+  attributes: {
+    position: Attribute.Enumeration<['leftImage', 'rightImage']>;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface CustomComponentsTaskComponent extends Schema.Component {
   collectionName: 'components_custom_components_task_components';
   info: {
@@ -15,19 +27,29 @@ export interface CustomComponentsTaskComponent extends Schema.Component {
     buttonRedirectUrl: Attribute.String;
     leftImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     rightImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    ImageComponent: Attribute.Component<'custom-components.image-component'>;
   };
 }
 
-export interface PageImageComponent extends Schema.Component {
-  collectionName: 'components_page_image_components';
+export interface LevelLevel1Component extends Schema.Component {
+  collectionName: 'components_level_level1_components';
   info: {
-    displayName: 'ImageComponent';
-    description: '';
+    displayName: 'Level1Component';
   };
   attributes: {
-    mainImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    description: Attribute.Text;
-    code: Attribute.String;
+    title1: Attribute.String;
+    Level2Component: Attribute.Component<'level.level2-component'>;
+    title: Attribute.String;
+  };
+}
+
+export interface LevelLevel2Component extends Schema.Component {
+  collectionName: 'components_level_level2_components';
+  info: {
+    displayName: 'Level2Component';
+  };
+  attributes: {
+    title2: Attribute.String;
   };
 }
 
@@ -35,10 +57,12 @@ export interface PageImageDComponent extends Schema.Component {
   collectionName: 'components_page_image_d_components';
   info: {
     displayName: 'ImageDComponent';
+    description: '';
   };
   attributes: {
     mainImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Description: Attribute.Text;
+    code: Attribute.String;
   };
 }
 
@@ -49,12 +73,8 @@ export interface PageImageGComponent extends Schema.Component {
     description: '';
   };
   attributes: {
-    Image1: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Image2: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-    Image3: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Image4: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Image5: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     code: Attribute.String;
+    Images: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
   };
 }
 
@@ -122,8 +142,10 @@ export interface SharedSharedImage extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'custom-components.image-component': CustomComponentsImageComponent;
       'custom-components.task-component': CustomComponentsTaskComponent;
-      'page.image-component': PageImageComponent;
+      'level.level1-component': LevelLevel1Component;
+      'level.level2-component': LevelLevel2Component;
       'page.image-d-component': PageImageDComponent;
       'page.image-g-component': PageImageGComponent;
       'page.image-grid-component': PageImageGridComponent;

@@ -25,24 +25,32 @@
       "type": "string"
     },
     "leftImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "rightImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "ImageComponent": {
+      "displayName": "ImageComponent",
+      "type": "component",
+      "repeatable": false,
+      "component": "custom-components.image-component"
     }
   }
 }

@@ -825,6 +825,36 @@ export interface ApiArticleArticle extends Schema.CollectionType {
   };
 }
 
+export interface ApiCategoryCategory extends Schema.CollectionType {
+  collectionName: 'categories';
+  info: {
+    singularName: 'category';
+    pluralName: 'categories';
+    displayName: 'category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::category.category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::category.category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiDynamicComponentDynamicComponent
   extends Schema.CollectionType {
   collectionName: 'dynamic_components';
@@ -859,6 +889,36 @@ export interface ApiDynamicComponentDynamicComponent
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::dynamic-component.dynamic-component',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLevelLevel extends Schema.CollectionType {
+  collectionName: 'levels';
+  info: {
+    singularName: 'level';
+    pluralName: 'levels';
+    displayName: 'Level';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Level1Component: Attribute.Component<'level.level1-component'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::level.level',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::level.level',
       'oneToOne',
       'admin::user'
     > &
@@ -911,11 +971,21 @@ export interface ApiTaskComponentTaskComponent extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     taskcomponent: Attribute.Component<
       'custom-components.task-component',
       true
-    >;
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -931,6 +1001,12 @@ export interface ApiTaskComponentTaskComponent extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::task-component.task-component',
+      'oneToMany',
+      'api::task-component.task-component'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -953,7 +1029,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::article.article': ApiArticleArticle;
+      'api::category.category': ApiCategoryCategory;
       'api::dynamic-component.dynamic-component': ApiDynamicComponentDynamicComponent;
+      'api::level.level': ApiLevelLevel;
       'api::product.product': ApiProductProduct;
       'api::task-component.task-component': ApiTaskComponentTaskComponent;
     }

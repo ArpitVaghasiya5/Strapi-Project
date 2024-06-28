@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_level_level1_components",
+  "info": {
+    "displayName": "Level1Component"
+  },
+  "options": {},
+  "attributes": {
+    "title1": {
+      "type": "string"
+    },
+    "Level2Component": {
+      "displayName": "Level2Component",
+      "type": "component",
+      "repeatable": false,
+      "component": "level.level2-component"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

@@ -1,22 +1,27 @@
 {
   "collectionName": "components_page_image_d_components",
   "info": {
-    "displayName": "ImageDComponent"
+    "displayName": "ImageDComponent",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "mainImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "Description": {
       "type": "text"
+    },
+    "code": {
+      "type": "string"
     }
   }
 }

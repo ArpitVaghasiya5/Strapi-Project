@@ -1,7 +1,6 @@
-module.exports = ({ env }) => ({
-    // ..
+ module.exports = ({ env }) => ({
    'transformer': {
-      enabled: false,
+      enabled: true,
       config: {
         responseTransforms: {
           removeAttributesKey: true,
@@ -36,5 +35,9 @@ module.exports = ({ env }) => ({
         }
       }
     },
-    // ..
+    'strapi-plugin-populate-deep': {
+      config: {
+        defaultDepth: 4,
+      }
+    },
   });
