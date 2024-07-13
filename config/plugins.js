@@ -20,9 +20,6 @@
             'api::category.category': {
               'GET':true,
             },
-            'api::task-component.task-component': {
-              'GET': true,
-            },
             'api::dynamic-component.dynamic-component':{
               'GET' : true,
             } 
@@ -40,4 +37,20 @@
         defaultDepth: 4,
       }
     },
+    // email: {
+    //   config: {
+    //     provider: 'nodemailer',
+    //     providerOptions: {
+    //       service: 'gmail',
+    //       auth: {
+    //         user: 'arpit.vaghasiya@thegateaycorp.co.in',
+    //         pass: ''
+    //       },
+    //     },
+    //     settings: {
+    //       defaultFrom: 'arpit.vaghasiya@thegatewaycorp.co.in',
+    //       defaultReplyTo: 'arpitvb152@gmail.com',
+    //     },
+    //   },
+    // },
   });
